@@ -1,0 +1,110 @@
+---
+
+---
+
+<section class="proteccion">
+  <div class="container">
+    <div class="proteccion__content">
+      <h2 class="proteccion__title">PROTECCIÓN INTERNACIONAL</h2>
+      <p class="proteccion__text">
+        <strong class="proteccion__highlight">BIENSEGURO Corp</strong> ofrece cobertura <strong class="proteccion__highlight">NACIONAL E INTERNACIONAL</strong><br>
+        llevando confianza y tranquilidad a cada rincón del país.
+      </p>
+      <p class="proteccion__subtext">
+        Estamos donde tú estés, listos para proteger lo que más importa.
+      </p>
+      <a href="/contacto" class="proteccion__button">Contáctanos</a>
+    </div>
+  </div>
+
+  <div class="proteccion__map">
+    <img src="/images/IMAGEN-PROTECCION-INTERNACIONAL.png" alt="Cobertura internacional" class="proteccion__map-image" loading="lazy" />
+  </div>
+</section>
+
+<style>
+  .proteccion {
+    padding: var(--spacing-2xl) 0 0;
+    background-color: var(--color-white);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .proteccion__content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .proteccion__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.02em;
+  }
+
+  .proteccion__text {
+    font-size: 1rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .proteccion__highlight {
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  .proteccion__subtext {
+    font-size: 0.95rem;
+    color: var(--color-black);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .proteccion__button {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .proteccion__button:hover {
+    background-color: #5a9a26;
+    transform: scale(1.05);
+  }
+
+  .proteccion__map {
+    margin-top: var(--spacing-2xl);
+    position: relative;
+    padding-top: var(--spacing-xl);
+    overflow: hidden;
+  }
+
+  .proteccion__map-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .proteccion__title {
+      font-size: 1.4rem;
+    }
+
+    .proteccion__text {
+      font-size: 0.9rem;
+    }
+
+    .proteccion__map-image {
+      max-width: 100%;
+    }
+  }
+</style>

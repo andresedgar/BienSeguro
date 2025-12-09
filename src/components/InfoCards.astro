@@ -1,0 +1,187 @@
+---
+
+---
+
+<section class="info-cards">
+  <div class="container">
+    <div class="info-cards__grid">
+      <!-- Card: Necesitas más información -->
+      <div class="info-card info-card--gray">
+        <h3 class="info-card__title">¿NECESITAS MÁS INFORMACIÓN?</h3>
+        <p class="info-card__text">
+          Contáctanos y recibe la <strong>asesoría</strong> que necesitas <strong>para tu tranquilidad.</strong>
+        </p>
+        <a href="mailto:biensegurocorp@gmail.com" class="info-card__button info-card__button--green">Enviar correo</a>
+      </div>
+
+      <!-- Card: Tu seguro ideal (con imagen) -->
+      <div class="info-card info-card--image">
+        <div class="info-card__image-wrapper">
+          <img src="/images/FOTO-TU-SEGURO-IDEAL-A-TU-ALCANCE.png" alt="Tu seguro ideal al alcance de tus manos" class="info-card__image" loading="lazy" />
+          <div class="info-card__image-overlay"></div>
+        </div>
+        <div class="info-card__image-content">
+          <span class="info-card__label">TU</span>
+          <span class="info-card__label info-card__label--highlight">SEGURO</span>
+          <span class="info-card__label info-card__label--highlight">IDEAL</span>
+          <span class="info-card__label">AL ALCANCE</span>
+          <span class="info-card__label">DE TUS</span>
+          <span class="info-card__label">MANOS...</span>
+        </div>
+      </div>
+
+      <!-- Card: Condiciones de las polizas -->
+      <div class="info-card info-card--gray">
+        <h3 class="info-card__title">CONDICIONES DE LAS POLIZAS</h3>
+        <p class="info-card__text">
+          Conoce cómo <strong>BIEN SEGURO CORP</strong> ha brindado confianza y tranquilidad en cada historia.
+        </p>
+        <a href="/condiciones-polizas" class="info-card__button info-card__button--green">Ver más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .info-cards {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .info-cards__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+
+  .info-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-card--gray {
+    background-color: var(--color-gray-lighter);
+    padding: var(--spacing-xl);
+    justify-content: space-between;
+  }
+
+  .info-card--image {
+    position: relative;
+  }
+
+  .info-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .info-card__text {
+    font-size: 1.05rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+    text-align: center;
+    flex: 1;
+  }
+
+  .info-card__text strong {
+    color: var(--color-black);
+  }
+
+  .info-card__button {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    text-align: center;
+    transition: all var(--transition-fast);
+    align-self: center;
+    margin-top: var(--spacing-md);
+  }
+
+  .info-card__button--green {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: 2px solid var(--color-secondary);
+  }
+
+  .info-card__button--green:hover {
+    background-color: #5a9a26;
+    border-color: #5a9a26;
+  }
+
+  /* Image card styles */
+  .info-card__image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .info-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info-card__image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(25, 61, 97, 0.3) 0%, rgba(25, 61, 97, 0.5) 100%);
+  }
+
+  .info-card__image-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: var(--spacing-xl);
+  }
+
+  .info-card__label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.2;
+  }
+
+  .info-card__label--highlight {
+    color: var(--color-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .info-cards__grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .info-card {
+      min-height: 280px;
+    }
+
+    .info-card--image {
+      order: -1;
+    }
+
+    .info-card__image-content {
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
