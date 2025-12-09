@@ -1,28 +1,37 @@
 ---
 const slides = [
   {
-    image: '/images/carrusel-1.png',
+    imageDesktop: '/images/carrusel-1-desktop.webp',
+    imageMobile: '/images/carrusel-1.webp',
     line1: 'Más que un',
     line2: 'seguro, somos',
     highlight: 'tu aliado en cada etapa de tu vida',
     buttonText: 'Conócenos',
-    buttonLink: '/nosotros'
+    buttonLink: '/nosotros',
+    textPosition: 'right',
+    buttonColor: 'blue'
   },
   {
-    image: '/images/carrusel-2.png',
+    imageDesktop: '/images/carrusel-2-desktop.webp',
+    imageMobile: '/images/carrusel-2.webp',
     line1: 'NOS ASEGURAMOS',
     line2: 'DE PROTEGER',
     highlight: 'LO QUE MÁS TE IMPORTA.',
     buttonText: 'Contáctanos',
-    buttonLink: '/contacto'
+    buttonLink: '/contacto',
+    textPosition: 'right',
+    buttonColor: 'green'
   },
   {
-    image: '/images/carrusel-3.png',
+    imageDesktop: '/images/carrusel-3-desktop.webp',
+    imageMobile: '/images/carrusel-3.webp',
     line1: 'Soluciones',
     line2: 'personalizadas',
     highlight: 'para garantizar tu tranquilidad y bienestar.',
     buttonText: 'Cotiza aquí',
-    buttonLink: '/contacto'
+    buttonLink: '/contacto',
+    textPosition: 'left',
+    buttonColor: 'blue'
   }
 ];
 ---
@@ -31,22 +40,19 @@ const slides = [
   <div class="hero__carousel">
     {slides.map((slide, index) => (
       <div class={`hero__slide ${index === 0 ? 'hero__slide--active' : ''}`} data-slide={index}>
-        <div class="hero__image-side">
-          <img src={slide.image} alt="" class="hero__image" loading={index === 0 ? 'eager' : 'lazy'} />
-        </div>
-        <div class="hero__curve">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="hero__curve-svg">
-            <path d="M0,0 Q50,50 0,100 L0,0 Z" fill="#6bb12e"/>
-          </svg>
-        </div>
-        <div class="hero__content-side">
+        <picture class="hero__picture">
+          <source media="(min-width: 769px)" srcset={slide.imageDesktop} />
+          <img src={slide.imageMobile} alt="" class="hero__image" loading={index === 0 ? 'eager' : 'lazy'} />
+        </picture>
+
+        <div class={`hero__content-overlay hero__content-overlay--${slide.textPosition}`}>
           <div class="hero__content">
             <h1 class="hero__title">
               <span class="hero__title-line">{slide.line1}</span>
               <span class="hero__title-line">{slide.line2}</span>
               <span class="hero__title-highlight">{slide.highlight}</span>
             </h1>
-            <a href={slide.buttonLink} class="hero__button">{slide.buttonText}</a>
+            <a href={slide.buttonLink} class={`hero__button hero__button--${slide.buttonColor}`}>{slide.buttonText}</a>
           </div>
         </div>
       </div>
@@ -84,7 +90,6 @@ const slides = [
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -95,11 +100,12 @@ const slides = [
     visibility: visible;
   }
 
-  .hero__image-side {
-    position: relative;
-    width: 50%;
+  .hero__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    overflow: hidden;
   }
 
   .hero__image {
@@ -109,28 +115,27 @@ const slides = [
     object-position: center;
   }
 
-  .hero__curve {
+  .hero__content-overlay {
     position: absolute;
-    left: calc(50% - 40px);
     top: 0;
-    width: 80px;
-    height: 100%;
-    z-index: 2;
-  }
-
-  .hero__curve-svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero__content-side {
-    position: relative;
     width: 50%;
     height: 100%;
-    background-color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
+  }
+
+  .hero__content-overlay--right {
+    right: 0;
+  }
+
+  .hero__content-overlay--left {
+    left: 0;
+  }
+
+  .hero__content-overlay--left .hero__button {
+    margin-bottom: var(--spacing-xl);
   }
 
   .hero__content {
@@ -163,7 +168,6 @@ const slides = [
   .hero__button {
     display: inline-block;
     padding: 0.85rem 2.5rem;
-    background-color: var(--color-secondary);
     color: var(--color-white);
     font-weight: 600;
     font-size: 1rem;
@@ -171,8 +175,21 @@ const slides = [
     transition: background-color var(--transition-fast), transform var(--transition-fast);
   }
 
-  .hero__button:hover {
+  .hero__button--green {
+    background-color: var(--color-secondary);
+  }
+
+  .hero__button--green:hover {
     background-color: #5a9a26;
+    transform: scale(1.05);
+  }
+
+  .hero__button--blue {
+    background-color: var(--color-primary);
+  }
+
+  .hero__button--blue:hover {
+    background-color: #0f2d4a;
     transform: scale(1.05);
   }
 
@@ -224,23 +241,18 @@ const slides = [
       min-height: 500px;
     }
 
-    .hero__slide {
-      flex-direction: column;
-    }
-
-    .hero__image-side {
+    .hero__picture {
+      position: relative;
       width: 100%;
       height: 250px;
     }
 
-    .hero__curve {
-      display: none;
-    }
-
-    .hero__content-side {
+    .hero__content-overlay {
+      position: relative;
       width: 100%;
       height: auto;
       min-height: 250px;
+      background-color: var(--color-primary);
     }
 
     .hero__content {
@@ -281,7 +293,7 @@ const slides = [
   }
 
   function startAutoplay() {
-    intervalId = setInterval(nextSlide, 5000);
+    intervalId = setInterval(nextSlide, 3000);
   }
 
   function stopAutoplay() {
