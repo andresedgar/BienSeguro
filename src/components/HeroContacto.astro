@@ -1,0 +1,154 @@
+---
+// Hero section para página de Contacto
+---
+
+<section class="hero-contacto">
+  <div class="hero-content">
+    <div class="text-section">
+      <h1 class="hero-title">
+        Estamos para ayudarte<br>
+        a proteger <span class="highlight">lo que<br>
+        más te importa</span>
+      </h1>
+      <p class="hero-cta">¡CONTÁCTANOS!</p>
+    </div>
+    <div class="image-section">
+      <picture>
+        <source srcset="/images/contacto/FOTO-PORTADA.webp" type="image/webp">
+        <img src="/images/contacto/FOTO-PORTADA.png" alt="Equipo BienSeguro Corp" loading="eager">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-contacto {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 450px;
+    position: relative;
+  }
+
+  .text-section {
+    padding: var(--spacing-3xl);
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+    margin: 0 0 var(--spacing-lg) 0;
+    line-height: 1.2;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .hero-cta {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+
+  .image-section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .image-section picture {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .text-section {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-cta {
+      font-size: 2rem;
+    }
+
+    .image-section {
+      justify-content: center;
+      padding: var(--spacing-xl) 0;
+    }
+
+    .image-section picture {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-cta {
+      font-size: 1.75rem;
+    }
+
+    .image-section picture {
+      width: 320px;
+      height: 320px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .text-section {
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .hero-cta {
+      font-size: 1.5rem;
+    }
+
+    .image-section picture {
+      width: 280px;
+      height: 280px;
+    }
+  }
+</style>

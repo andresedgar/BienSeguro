@@ -1,25 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroNosotros from '../components/HeroNosotros.astro';
+import ValoresSection from '../components/ValoresSection.astro';
+import MisionVision from '../components/MisionVision.astro';
+import TestimoniosSection from '../components/TestimoniosSection.astro';
+import TeOfrecemos from '../components/TeOfrecemos.astro';
 ---
 
-<Layout title="Nosotros" description="Conoce más sobre BienSeguro y nuestro equipo">
-  <section class="page-content">
-    <div class="container">
-      <h1>Nosotros</h1>
-      <!-- Contenido de la página Nosotros -->
-    </div>
-  </section>
+<Layout
+  title="Nosotros - BIENSEGURO Corp"
+  description="Conoce más sobre BIENSEGURO Corp, un despacho con más de 15 años de experiencia ofreciendo servicios de protección personalizados centrados en el trato humano."
+>
+  <HeroNosotros />
+  <ValoresSection />
+  <MisionVision />
+  <TestimoniosSection />
+  <TeOfrecemos />
 </Layout>
-
-<style>
-  .page-content {
-    padding: var(--spacing-2xl) 0;
-    flex: 1;
-  }
-
-  h1 {
-    color: var(--color-primary);
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-lg);
-  }
-</style>

@@ -1,25 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroContacto from '../components/HeroContacto.astro';
+import ContactCards from '../components/ContactCards.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
-<Layout title="Contacto" description="Ponte en contacto con nosotros">
-  <section class="page-content">
-    <div class="container">
-      <h1>Contacto</h1>
-      <!-- Contenido de la página Contacto -->
-    </div>
-  </section>
+<Layout
+  title="Contacto - BIENSEGURO Corp"
+  description="Estamos para ayudarte a proteger lo que más te importa. Contáctanos para cualquier duda o consulta sobre seguros."
+>
+  <HeroContacto />
+  <ContactCards />
+  <ContactForm />
 </Layout>
-
-<style>
-  .page-content {
-    padding: var(--spacing-2xl) 0;
-    flex: 1;
-  }
-
-  h1 {
-    color: var(--color-primary);
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-lg);
-  }
-</style>

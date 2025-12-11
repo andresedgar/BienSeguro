@@ -1,0 +1,368 @@
+---
+// Sección de Valores - Carrusel
+const valores = [
+  {
+    title: 'Confianza',
+    description: 'Nuestros clientes reciben información clara y confiable para decisiones transparentes.',
+    image: '/images/nosotros/VALORES-CONFIANZA.webp',
+    imagePng: '/images/nosotros/VALORES-CONFIANZA.png',
+    icon: '🤝'
+  },
+  {
+    title: 'Seguridad',
+    description: 'Protegemos a los clientes con coberturas que resguardan sus bienes, salud y futuro financiero.',
+    image: '/images/nosotros/VALORES-SEGURIDAD.webp',
+    imagePng: '/images/nosotros/VALORES-SEGURIDAD.png',
+    icon: '🛡️'
+  },
+  {
+    title: 'Compromiso',
+    description: 'Acompañamos a nuestros clientes desde la asesoría hasta la gestión de siniestros cuidando sus intereses.',
+    image: '/images/nosotros/VALORES-COMPROMISO.webp',
+    imagePng: '/images/nosotros/VALORES-COMPROMISO.png',
+    icon: '✓'
+  },
+  {
+    title: 'Experiencia',
+    description: 'Ofrecemos asesoría experta que asegura soluciones óptimas para cada cliente.',
+    image: '/images/nosotros/VALORES-EXPERIENCIA.webp',
+    imagePng: '/images/nosotros/VALORES-EXPERIENCIA.png',
+    icon: '📊'
+  },
+  {
+    title: 'Capacidad de resolución',
+    description: 'Respondemos rápidamente ante imprevistos, brindando soluciones eficientes y óptimas.',
+    image: '/images/nosotros/VALORES-CAPACIDAD-DE-RESOLUCION.webp',
+    imagePng: '/images/nosotros/VALORES-CAPACIDAD-DE-RESOLUCION.png',
+    icon: '💡'
+  },
+  {
+    title: 'Empatía',
+    description: 'Acompañamos a nuestros clientes y ofrecemos apoyo personalizado en momentos difíciles.',
+    image: '/images/nosotros/VALORES-EMPATIA.webp',
+    imagePng: '/images/nosotros/VALORES-EMPATIA.png',
+    icon: '❤️'
+  }
+];
+---
+
+<section class="valores-section">
+  <div class="container">
+    <h2 class="section-title">VALORES</h2>
+
+    <div class="valores-carousel-container">
+      <button class="carousel-nav prev" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="valores-carousel">
+        <div class="valores-track">
+          {valores.map((valor) => (
+            <div class="valor-card">
+              <div class="valor-image">
+                <picture>
+                  <source srcset={valor.image} type="image/webp">
+                  <img src={valor.imagePng} alt={valor.title} loading="lazy">
+                </picture>
+              </div>
+              <div class="valor-content">
+                <div class="valor-header">
+                  <span class="valor-icon">{valor.icon}</span>
+                  <h3 class="valor-title">{valor.title}</h3>
+                </div>
+                <p class="valor-description">{valor.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button class="carousel-nav next" aria-label="Siguiente">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Carrusel de valores
+  const track = document.querySelector('.valores-track') as HTMLElement;
+  const prevBtn = document.querySelector('.carousel-nav.prev') as HTMLButtonElement;
+  const nextBtn = document.querySelector('.carousel-nav.next') as HTMLButtonElement;
+  const cards = document.querySelectorAll('.valor-card');
+
+  let currentIndex = 0;
+  const totalCards = cards.length;
+  let autoPlayInterval: number;
+
+  function getCardsToShow(): number {
+    const width = window.innerWidth;
+    if (width <= 768) return 1;
+    if (width <= 1024) return 2;
+    return 3;
+  }
+
+  function getMaxIndex(): number {
+    return totalCards - getCardsToShow();
+  }
+
+  function updateCarousel() {
+    const cardWidth = (cards[0] as HTMLElement).offsetWidth;
+    const gap = 24; // var(--spacing-xl)
+    const offset = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  function next() {
+    const maxIndex = getMaxIndex();
+    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+    updateCarousel();
+  }
+
+  function prev() {
+    const maxIndex = getMaxIndex();
+    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+    updateCarousel();
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = window.setInterval(() => {
+      next();
+    }, 3000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // Event listeners
+  nextBtn.addEventListener('click', () => {
+    next();
+    stopAutoPlay();
+    startAutoPlay();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prev();
+    stopAutoPlay();
+    startAutoPlay();
+  });
+
+  // Pausar autoplay al hover
+  track.addEventListener('mouseenter', stopAutoPlay);
+  track.addEventListener('mouseleave', startAutoPlay);
+
+  // Responsive: actualizar en resize
+  let resizeTimeout: number;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = window.setTimeout(() => {
+      // Reset al inicio cuando cambia el tamaño
+      const maxIndex = getMaxIndex();
+      if (currentIndex > maxIndex) {
+        currentIndex = 0;
+      }
+      updateCarousel();
+    }, 150);
+  });
+
+  // Iniciar
+  updateCarousel();
+  startAutoPlay();
+</script>
+
+<style>
+  .valores-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-2xl);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .valores-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .valores-carousel {
+    flex: 1;
+    overflow: hidden;
+    padding: var(--spacing-md) 0;
+  }
+
+  .valores-track {
+    display: flex;
+    gap: var(--spacing-xl);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .valor-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex: 0 0 calc((100% - (2 * var(--spacing-xl))) / 3);
+    min-width: 0;
+  }
+
+  .valor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-accent);
+  }
+
+  .valor-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+
+  .valor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .valor-content {
+    padding: var(--spacing-lg);
+  }
+
+  .valor-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .valor-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .valor-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .valor-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .carousel-nav {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel-nav:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .carousel-nav:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 1024px) {
+    .valor-card {
+      flex: 0 0 calc((100% - var(--spacing-xl)) / 2);
+    }
+
+    .valor-image {
+      height: 180px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .valores-section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .valores-carousel-container {
+      gap: var(--spacing-md);
+    }
+
+    .valor-card {
+      flex: 0 0 100%;
+    }
+
+    .valor-image {
+      height: 160px;
+    }
+
+    .valor-content {
+      padding: var(--spacing-md);
+    }
+
+    .valor-title {
+      font-size: 1.2rem;
+    }
+
+    .valor-description {
+      font-size: 0.9rem;
+    }
+
+    .carousel-nav {
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel-nav svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-nav {
+      width: 35px;
+      height: 35px;
+    }
+
+    .carousel-nav svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>

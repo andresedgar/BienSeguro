@@ -1,0 +1,156 @@
+---
+// Hero section para página Nosotros
+---
+
+<section class="hero-nosotros">
+  <div class="hero-image-container">
+    <picture>
+      <source srcset="/images/nosotros/FOTO-PORTADA.webp" type="image/webp">
+      <img src="/images/nosotros/FOTO-PORTADA.png" alt="Equipo BienSeguro Corp" loading="eager">
+    </picture>
+    <div class="hero-banner">
+      <h1 class="hero-title">¡Listos para apoyarte!</h1>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="content-text">
+        <p>
+          <strong class="highlight">BIENSEGURO CORP</strong> es un despacho con más de 15 años de experiencia, que se dedica a
+          <strong>ofrecer servicios de protección personalizados, centrados en el trato humano y la
+          búsqueda de las mejores soluciones para sus clientes</strong>.
+        </p>
+        <p>
+          Fundada en principios sólidos que priorizan el bienestar de quienes asegura, actúa como
+          un aliado estratégico, apoyando a profesionales y familias en su camino hacia una vida
+          segura y un futuro de bienestar integral.
+        </p>
+        <p>
+          <strong>Con un enfoque en la experiencia y el compromiso, BIENSEGURO CORP se esfuerza por
+          garantizar que cada cliente reciba la protección adecuada para sus necesidades.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-nosotros {
+    width: 100%;
+  }
+
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image-container picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+  }
+
+  .hero-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-title {
+    color: var(--color-secondary);
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
+
+  .hero-content {
+    background: var(--color-gray);
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .content-text {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+  }
+
+  .content-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .content-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-text .highlight {
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .hero-image-container {
+      height: 300px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-banner {
+      padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .hero-content {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .content-text {
+      padding: var(--spacing-lg);
+    }
+
+    .content-text p {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-image-container {
+      height: 250px;
+    }
+
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .hero-banner {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .content-text {
+      padding: var(--spacing-md);
+      margin: 0 var(--spacing-md);
+    }
+  }
+</style>

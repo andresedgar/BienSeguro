@@ -1,25 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AvisoPrivacidad from '../components/AvisoPrivacidad.astro';
 ---
 
-<Layout title="Aviso de Privacidad" description="Aviso de privacidad y protección de datos">
-  <section class="page-content">
-    <div class="container">
-      <h1>Aviso de Privacidad</h1>
-      <!-- Contenido de la página Aviso de Privacidad -->
-    </div>
-  </section>
+<Layout
+  title="Aviso de Privacidad - BIENSEGURO Corp"
+  description="Estamos comprometidos con la transparencia para la seguridad de tus datos en línea. Conoce nuestra política de privacidad y protección de datos personales."
+>
+  <AvisoPrivacidad />
 </Layout>
-
-<style>
-  .page-content {
-    padding: var(--spacing-2xl) 0;
-    flex: 1;
-  }
-
-  h1 {
-    color: var(--color-primary);
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-lg);
-  }
-</style>

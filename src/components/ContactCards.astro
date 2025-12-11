@@ -1,0 +1,161 @@
+---
+// Tarjetas de información de contacto
+---
+
+<section class="contact-cards">
+  <div class="container">
+    <div class="cards-grid">
+      <div class="contact-card">
+        <div class="card-icon">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="30" fill="#004057"/>
+            <path d="M30 15C23.375 15 18 20.375 18 27C18 35.25 30 45 30 45C30 45 42 35.25 42 27C42 20.375 36.625 15 30 15ZM30 31.5C27.525 31.5 25.5 29.475 25.5 27C25.5 24.525 27.525 22.5 30 22.5C32.475 22.5 34.5 24.525 34.5 27C34.5 29.475 32.475 31.5 30 31.5Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <p class="card-text">Blvd Miguel Tamayo de<br>los Monteros #2376,<br>Plaza Regia/local 2.<br>Country Tres Ríos</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-icon">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="30" fill="#004057"/>
+            <path d="M42 33.75C40.05 33.75 38.175 33.45 36.45 32.925C36.15 32.85 35.775 32.925 35.55 33.15L32.7 36.825C28.125 34.65 25.35 31.875 23.175 27.3L26.85 24.45C27.075 24.15 27.15 23.85 27.075 23.55C26.55 21.825 26.25 19.95 26.25 18C26.25 17.175 25.575 16.5 24.75 16.5H18.75C17.925 16.5 17.25 17.175 17.25 18C17.25 30.675 27.3 40.5 40.5 40.5C41.325 40.5 42 39.825 42 39V33C42 32.175 41.325 31.5 40.5 31.5L42 33.75Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <p class="card-text">667 123 4567<br>667 316 8537</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-icon">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="30" fill="#004057"/>
+            <path d="M40.5 19.5H19.5C18.675 19.5 18.0075 20.175 18.0075 21L18 39C18 39.825 18.675 40.5 19.5 40.5H40.5C41.325 40.5 42 39.825 42 39V21C42 20.175 41.325 19.5 40.5 19.5ZM40.5 24L30 30.75L19.5 24V21L30 27.75L40.5 21V24Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <p class="card-text">biensegurocorp@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-cards {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(to bottom, #4a7c59 0%, #2d5a3d 100%);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    background: white;
+    border-radius: 20px;
+    padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-icon {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .card-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .contact-card {
+      flex-direction: row;
+      text-align: left;
+      padding: var(--spacing-xl);
+    }
+
+    .card-icon {
+      margin-bottom: 0;
+      margin-right: var(--spacing-lg);
+    }
+
+    .card-content {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-cards {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .cards-grid {
+      gap: var(--spacing-lg);
+    }
+
+    .contact-card {
+      padding: var(--spacing-lg);
+    }
+
+    .card-icon svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    .card-text {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .card-icon {
+      margin-right: 0;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .card-content {
+      justify-content: center;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+    }
+  }
+</style>

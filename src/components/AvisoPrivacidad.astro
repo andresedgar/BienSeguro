@@ -1,0 +1,355 @@
+---
+// Componente de Aviso de Privacidad
+---
+
+<article class="aviso-privacidad">
+  <section class="hero-aviso">
+    <div class="hero-content">
+      <div class="text-section">
+        <h1 class="hero-title">AVISO DE<br>PRIVACIDAD</h1>
+        <p class="hero-subtitle">
+          Estamos comprometidos con la<br>
+          transparencia para la seguridad<br>
+          de tus datos en línea
+        </p>
+      </div>
+      <div class="image-section">
+        <picture>
+          <source srcset="/images/aviso-privacidad/FOTO-PORTADA.webp" type="image/webp">
+          <img src="/images/aviso-privacidad/FOTO-PORTADA.png" alt="Seguridad de datos" loading="eager">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="intro-box">
+        <p>
+          En <strong>BIENSEGURO CORP</strong>, nos comprometemos a proteger
+          la privacidad y los datos personales de nuestros clientes y
+          usuarios. Esta política explica cómo recopilamos, usamos
+          y protegemos la información que nos proporcionan.
+        </p>
+      </div>
+
+      <div class="privacy-content">
+        <section class="privacy-section">
+          <h2>1. INFORMACIÓN DEL RESPONSABLE DEL TRATAMIENTO</h2>
+          <p>
+            El responsable del tratamiento de los datos es BIENSEGURO CORP, empresa
+            dedicada a ofrecer servicios de protección personalizados. Puedes contactarnos a través de nuestro correo electrónico contacto@biensegurocorp.com o en
+            nuestras oficinas ubicadas en Blvd. Alfonso G. Calderón
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>2. DATOS DEL RESPONSABLE EN MATERIA DE PROTECCIÓN.</h2>
+          <p>
+            Para cualquier consulta sobre el manejo de tus datos personales, puedes dirigirte a nuestro delegado de protección de datos escribiendo a privacidad@biensegurocorp.com.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>3. INFORMACIÓN SOBRE LA FINALIDAD DEL TRATAMIENTO</h2>
+          <p>Los datos personales que recopilamos se utilizan exclusivamente para:</p>
+          <ul class="privacy-list">
+            <li><em>Gestionar y prestar los servicios aseguradores contratados.</em></li>
+            <li><em>Ofrecer atención personalizada y comunicación sobre nuevos productos.</em></li>
+            <li><em>Cumplir con obligaciones legales y administrativas.</em></li>
+          </ul>
+        </section>
+
+        <section class="privacy-section">
+          <h2>4. TERCEROS DESTINATARIOS DE LOS DATOS PERSONALES</h2>
+          <p>
+            Tus datos pueden ser compartidos con terceros estrictamente necesarios,
+            como proveedores de servicios de soporte técnico o empresas reaseguradoras,
+            siempre bajo acuerdos de confidencialidad.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>5. PLAZO DE CONSERVACIÓN</h2>
+          <p>
+            Conservaremos tus datos personales durante el tiempo necesario para cumplir
+            con los servicios contratados y las obligaciones legales asociadas.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>6. DERECHOS ARCO</h2>
+          <p>
+            Como usuario, tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales. Puedes ejercer estos derechos enviando un
+            correo a privacidad@biensegurocorp.com con la documentación necesaria.
+          </p>
+        </section>
+
+        <div class="contact-note">
+          <p>
+            Para cualquier duda o aclaración sobre nuestra política de
+            privacidad, contáctanos en <strong>privacidad@biensegurocorp.com.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  .aviso-privacidad {
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero-aviso {
+    background: var(--color-primary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-aviso::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, transparent 100%);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .text-section {
+    padding: var(--spacing-3xl);
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 var(--spacing-lg) 0;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .image-section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+  }
+
+  .image-section picture {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Content Section */
+  .content-section {
+    padding: var(--spacing-3xl) 0;
+    background: white;
+  }
+
+  .intro-box {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding: var(--spacing-2xl);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-3xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .intro-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .intro-box strong {
+    font-weight: 700;
+  }
+
+  .privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .privacy-section {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .privacy-section h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .privacy-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .privacy-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+  }
+
+  .privacy-list li {
+    position: relative;
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .privacy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+  }
+
+  .contact-note {
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-xl);
+    background: #f5f5f5;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+  }
+
+  .contact-note p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+  }
+
+  .contact-note strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .text-section {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .image-section {
+      padding: var(--spacing-xl);
+    }
+
+    .hero-aviso::before {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .intro-box {
+      padding: var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .intro-box p {
+      font-size: 1rem;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.2rem;
+    }
+
+    .privacy-section p,
+    .privacy-list li {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .text-section {
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .intro-box {
+      padding: var(--spacing-lg);
+    }
+
+    .privacy-section h2 {
+      font-size: 1.1rem;
+    }
+
+    .contact-note {
+      padding: var(--spacing-md);
+    }
+  }
+</style>

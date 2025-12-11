@@ -1,0 +1,230 @@
+---
+// Sección de Testimonios con video de Instagram
+---
+
+<section class="testimonios-section">
+  <div class="testimonios-header">
+    <div class="container">
+      <h2 class="section-title">TESTIMONIOS</h2>
+      <p class="section-subtitle">
+        Te compartimos historias reales de clientes de <em>BIENSEGURO Corp.</em><br>
+        Personas que encontraron apoyo, soluciones y tranquilidad en momentos<br>
+        clave, gracias al compromiso y profesionalismo de nuestro equipo.
+      </p>
+      <h3 class="experiences-title">EXPERIENCIAS QUE HABLAN POR SÍ SOLAS</h3>
+    </div>
+  </div>
+
+  <div class="testimonios-body">
+    <div class="container">
+      <div class="video-wrapper">
+        <div class="instagram-embed">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DLdCJ_WPkpk/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+          </blockquote>
+        </div>
+
+        <div class="cta-box">
+          <p class="cta-text">
+            Descubre el testimonio completo en Instagram y comprueba cómo
+            BIENSEGURO Corp hace la diferencia cuando más se necesita.
+          </p>
+          <a
+            href="https://www.instagram.com/reel/DLdCJ_WPkpk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+          >
+            CONOCER MÁS
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Cargar el script de Instagram embed después de que el componente se monte
+  if (typeof window !== 'undefined') {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = '//www.instagram.com/embed.js';
+    document.body.appendChild(script);
+  }
+</script>
+
+<style>
+  .testimonios-section {
+    width: 100%;
+    background: var(--color-gray-lighter);
+    padding-bottom: 8rem;
+  }
+
+  .testimonios-header {
+    background: var(--color-primary);
+    padding: var(--spacing-2xl) 0;
+    color: white;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    margin: 0 auto var(--spacing-lg);
+  }
+
+  .section-subtitle em {
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .experiences-title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .testimonios-body {
+    background: #7a7a7a;
+    padding: var(--spacing-3xl) 0;
+    min-height: 500px;
+  }
+
+  .video-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .instagram-embed {
+    display: flex;
+    justify-content: center;
+    min-height: 600px;
+    z-index: 1;
+  }
+
+  .instagram-media {
+    margin: 0 auto !important;
+  }
+
+  .cta-box {
+    position: absolute;
+    bottom: -80px;
+    right: -50px;
+    background: var(--color-secondary);
+    border-radius: 30px;
+    padding: 1rem;
+    max-width: 380px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .cta-button {
+    display: block;
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .cta-button:hover {
+    background: #003344;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 1024px) {
+    .cta-box {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin-top: var(--spacing-xl);
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonios-header {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      padding: 0 var(--spacing-md);
+    }
+
+    .section-subtitle br {
+      display: none;
+    }
+
+    .experiences-title {
+      font-size: 1.3rem;
+      padding: 0 var(--spacing-md);
+    }
+
+    .testimonios-body {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .instagram-embed {
+      min-height: 500px;
+    }
+
+    .cta-box {
+      padding: var(--spacing-lg);
+      border-radius: 20px;
+    }
+
+    .cta-text {
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      font-size: 0.9rem;
+      padding: var(--spacing-sm) var(--spacing-lg);
+    }
+  }
+</style>
