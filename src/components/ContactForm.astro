@@ -7,7 +7,7 @@
     <div class="form-wrapper">
       <div class="form-container">
         <h2 class="form-title">¿TIENES ALGUNA DUDA?</h2>
-        <p class="form-subtitle">!Estaremos encantados de apoyarte!</p>
+        <p class="form-subtitle">¡Estaremos encantados de apoyarte!</p>
 
         <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contacto">
@@ -44,10 +44,16 @@
           <img src="/images/contacto/FOTO-CAJA-DE-CONTACTO.png" alt="Familia feliz" loading="lazy">
         </picture>
         <div class="logo-overlay">
-          <svg width="120" height="120" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 30C85 30 72 42 72 57C72 72 85 85 100 85C115 85 128 72 128 57C128 42 115 30 100 30Z" fill="white"/>
-            <path d="M100 95C75 95 55 115 55 140V170H145V140C145 115 125 95 100 95Z" fill="white"/>
-            <circle cx="100" cy="100" r="90" stroke="white" stroke-width="8" fill="none"/>
+          <svg width="90" height="90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Heart with hands -->
+            <path d="M50 85C50 85 15 65 15 42C15 30 22 20 32 20C38 20 43 23 50 30C57 23 62 20 68 20C78 20 85 30 85 42C85 65 50 85 50 85Z" fill="white"/>
+            <!-- Left hand -->
+            <path d="M30 45C30 45 25 40 20 45L25 50L30 45Z" fill="white"/>
+            <!-- Right hand -->
+            <path d="M70 45C70 45 75 40 80 45L75 50L70 45Z" fill="white"/>
+            <!-- Hand details -->
+            <circle cx="32" cy="48" r="8" fill="#004057" opacity="0.2"/>
+            <circle cx="68" cy="48" r="8" fill="#004057" opacity="0.2"/>
           </svg>
         </div>
       </div>
@@ -58,7 +64,7 @@
 <style>
   .contact-form-section {
     padding: var(--spacing-3xl) 0;
-    background-image: url('/images/contacto/FOTO-DE-FONDO-CAJA-DE-CONTACTO.png');
+    background-image: url('/images/contacto/FOTO-DE-FONDO-CAJA-DE-CONTACTO.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,7 +78,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.1);
   }
 
   .container {
@@ -82,11 +88,12 @@
 
   .form-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: var(--spacing-2xl);
     max-width: 1200px;
     margin: 0 auto;
-    align-items: start;
+    align-items: stretch;
+    padding: 5rem;
   }
 
   .form-container {
@@ -100,15 +107,15 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin: 0 0 var(--spacing-md) 0;
-    text-align: center;
+    margin: 0 0 var(--spacing-sm) 0;
+    text-align: left;
   }
 
   .form-subtitle {
     font-size: 1.1rem;
     color: var(--color-primary);
     margin: 0 0 var(--spacing-xl) 0;
-    text-align: center;
+    text-align: left;
   }
 
   .contact-form {
@@ -135,19 +142,25 @@
   .form-group textarea {
     width: 100%;
     padding: var(--spacing-md);
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
-    background: #f5f5f5;
+    background: #e8e8e8;
     transition: all 0.3s ease;
+    color: #333;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #333;
+    opacity: 1;
   }
 
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
-    background: white;
+    background: #d8d8d8;
   }
 
   .form-group textarea {
@@ -156,7 +169,7 @@
   }
 
   .submit-button {
-    background: var(--color-primary);
+    background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 100%);
     color: white;
     padding: var(--spacing-md) var(--spacing-2xl);
     border: none;
@@ -169,7 +182,7 @@
   }
 
   .submit-button:hover {
-    background: #003344;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
@@ -180,7 +193,6 @@
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     height: 100%;
-    min-height: 500px;
   }
 
   .image-container picture {
@@ -199,10 +211,15 @@
   .logo-overlay {
     position: absolute;
     bottom: var(--spacing-2xl);
-    right: var(--spacing-2xl);
-    background: rgba(0, 64, 87, 0.9);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 64, 87, 0.95);
     border-radius: 50%;
-    padding: var(--spacing-md);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   }
 
@@ -243,12 +260,13 @@
 
     .logo-overlay {
       bottom: var(--spacing-lg);
-      right: var(--spacing-lg);
+      width: 100px;
+      height: 100px;
     }
 
     .logo-overlay svg {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
     }
   }
 
@@ -270,9 +288,14 @@
       min-height: 300px;
     }
 
+    .logo-overlay {
+      width: 80px;
+      height: 80px;
+    }
+
     .logo-overlay svg {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
     }
   }
 </style>
