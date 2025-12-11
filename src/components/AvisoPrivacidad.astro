@@ -13,12 +13,6 @@
           de tus datos en línea
         </p>
       </div>
-      <div class="image-section">
-        <picture>
-          <source srcset="/images/aviso-privacidad/FOTO-PORTADA.webp" type="image/webp">
-          <img src="/images/aviso-privacidad/FOTO-PORTADA.png" alt="Seguridad de datos" loading="eager">
-        </picture>
-      </div>
     </div>
   </section>
 
@@ -103,7 +97,10 @@
 
   /* Hero Section */
   .hero-aviso {
-    background: var(--color-primary);
+    background-image: url('/images/aviso-privacidad/FOTO-PORTADA-AVISO-DE-PRIVACIDAD.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
   }
@@ -112,26 +109,25 @@
     content: '';
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--color-secondary) 0%, transparent 100%);
-    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
   }
 
   .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
     min-height: 400px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    display: flex;
+    align-items: center;
   }
 
   .text-section {
-    padding: var(--spacing-3xl);
+    padding: 3rem;
   }
 
   .hero-title {
@@ -150,26 +146,6 @@
     line-height: 1.5;
   }
 
-  .image-section {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-2xl);
-  }
-
-  .image-section picture {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .image-section img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
   /* Content Section */
   .content-section {
     padding: var(--spacing-3xl) 0;
@@ -181,7 +157,8 @@
     color: var(--color-primary);
     padding: var(--spacing-2xl);
     border-radius: 12px;
-    margin-bottom: var(--spacing-3xl);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -269,7 +246,6 @@
   /* Responsive */
   @media (max-width: 1024px) {
     .hero-content {
-      grid-template-columns: 1fr;
       min-height: auto;
     }
 
@@ -284,14 +260,6 @@
 
     .hero-subtitle {
       font-size: 1.2rem;
-    }
-
-    .image-section {
-      padding: var(--spacing-xl);
-    }
-
-    .hero-aviso::before {
-      display: none;
     }
   }
 
