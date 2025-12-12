@@ -1,0 +1,76 @@
+---
+interface Props {
+  titulo: string;
+  imagenFondo: string;
+  imagenFondoFallback: string;
+}
+
+const { titulo, imagenFondo, imagenFondoFallback } = Astro.props;
+---
+
+<section class="hero-servicio" style={`background-image: url(${imagenFondo})`}>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">{titulo}</h1>
+  </div>
+</section>
+
+<style>
+  .hero-servicio {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 64, 87, 0.4);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: var(--spacing-xl);
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+  }
+
+  @media (max-width: 768px) {
+    .hero-servicio {
+      height: 300px;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-servicio {
+      height: 250px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+  }
+</style>

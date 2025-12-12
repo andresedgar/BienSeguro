@@ -1,0 +1,68 @@
+---
+interface Props {
+  titulo: string;
+  subtitulo: string;
+}
+
+const { titulo, subtitulo } = Astro.props;
+---
+
+<section class="intro-servicio">
+  <div class="container">
+    <h2 class="intro-titulo">{titulo}</h2>
+    <p class="intro-subtitulo">{subtitulo}</p>
+  </div>
+</section>
+
+<style>
+  .intro-servicio {
+    padding: 3rem 8rem;
+    background: white;
+  }
+
+  .intro-titulo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 0 0 var(--spacing-lg) 0;
+    line-height: 1.2;
+  }
+
+  .intro-subtitulo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .intro-servicio {
+      padding: var(--spacing-2xl) 0 var(--spacing-xl) 0;
+    }
+
+    .intro-titulo {
+      font-size: 2rem;
+    }
+
+    .intro-subtitulo {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro-servicio {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .intro-titulo {
+      font-size: 1.75rem;
+    }
+
+    .intro-subtitulo {
+      font-size: 1.1rem;
+    }
+  }
+</style>

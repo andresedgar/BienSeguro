@@ -2,7 +2,13 @@
 const navItems = [
   { label: 'INICIO', href: '/' },
   { label: 'NOSOTROS', href: '/nosotros' },
-  { label: 'SERVICIOS', href: '/servicios' },
+  {
+    label: 'SERVICIOS',
+    href: '/servicios/seguro-vida',
+    submenu: [
+      { label: 'Seguros de Vida', href: '/servicios/seguro-vida' }
+    ]
+  },
   { label: 'CONTACTO', href: '/contacto' },
   { label: 'AVISO DE PRIVACIDAD', href: '/aviso-privacidad' },
 ];
@@ -27,13 +33,28 @@ const currentPath = Astro.url.pathname;
     <nav class="header__nav" aria-label="Navegación principal">
       <ul class="nav__list">
         {navItems.map((item) => (
-          <li class="nav__item">
+          <li class:list={['nav__item', { 'nav__item--has-dropdown': item.submenu }]}>
             <a
               href={item.href}
               class:list={['nav__link', { 'nav__link--active': currentPath === item.href }]}
             >
               {item.label}
+              {item.submenu && <span class="nav__link-arrow">▼</span>}
             </a>
+            {item.submenu && (
+              <ul class="nav__dropdown">
+                {item.submenu.map((subitem) => (
+                  <li class="nav__dropdown-item">
+                    <a
+                      href={subitem.href}
+                      class:list={['nav__dropdown-link', { 'nav__dropdown-link--active': currentPath === subitem.href }]}
+                    >
+                      {subitem.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
@@ -108,6 +129,58 @@ const currentPath = Astro.url.pathname;
   .nav__link:hover::after,
   .nav__link--active::after {
     width: 100%;
+  }
+
+  .nav__link-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.7rem;
+    transition: transform var(--transition-fast);
+  }
+
+  .nav__item--has-dropdown {
+    position: relative;
+  }
+
+  .nav__item--has-dropdown:hover .nav__link-arrow {
+    transform: rotate(180deg);
+  }
+
+  .nav__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-white);
+    min-width: 220px;
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-fast);
+    z-index: 100;
+  }
+
+  .nav__item--has-dropdown:hover .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav__dropdown-link {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    transition: all var(--transition-fast);
+    position: relative;
+  }
+
+  .nav__dropdown-link:hover,
+  .nav__dropdown-link--active {
+    color: var(--color-primary);
+    background-color: rgba(0, 123, 255, 0.05);
   }
 
   .header__menu-toggle {
@@ -188,6 +261,27 @@ const currentPath = Astro.url.pathname;
       padding: var(--spacing-sm) 0;
     }
 
+    .nav__item--has-dropdown {
+      position: static;
+    }
+
+    .nav__dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      padding-left: var(--spacing-lg);
+      margin-top: var(--spacing-xs);
+      background-color: rgba(0, 123, 255, 0.02);
+      border-radius: 8px;
+    }
+
+    .nav__dropdown-link {
+      padding: var(--spacing-xs) var(--spacing-md);
+      font-size: 0.85rem;
+    }
+
     /* Hamburger animation when open */
     .header__menu-toggle[aria-expanded="true"] .hamburger {
       background-color: transparent;
@@ -216,7 +310,7 @@ const currentPath = Astro.url.pathname;
   });
 
   // Close menu when clicking on a link
-  document.querySelectorAll('.nav__link').forEach((link) => {
+  document.querySelectorAll('.nav__link, .nav__dropdown-link').forEach((link) => {
     link.addEventListener('click', () => {
       menuToggle?.setAttribute('aria-expanded', 'false');
       nav?.classList.remove('is-open');

@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroServicio from '../../components/servicios/HeroServicio.astro';
+import IntroServicio from '../../components/servicios/IntroServicio.astro';
+import BeneficiosServicio from '../../components/servicios/BeneficiosServicio.astro';
+import CTAServicio from '../../components/servicios/CTAServicio.astro';
+
+const beneficios = [
+  {
+    titulo: "Tranquilidad para ti y tus seres queridos.",
+    descripcion: "Adecuado para todo tipo de personas, especialmente padres de familia.",
+  },
+  {
+    titulo: "Cobertura completa ante imprevistos.",
+    descripcion: "",
+    items: [
+      "Protección por invalidez total o permanente.",
+      "Doble indemnización en caso de accidente fatal.",
+      "Excepción de pago de prima en situaciones específicas."
+    ]
+  },
+  {
+    titulo: "Respaldo financiero para tu familia.",
+    descripcion: "",
+    items: [
+      "Indemnización de 1 a 3 millones de pesos en caso de fallecimiento.",
+      "Seguro de ahorro con opción de retiro.",
+      "Retorno de inversión atractivo (<strong>desde $500,000</strong>)."
+    ]
+  },
+  {
+    titulo: "Beneficio adicional por enfermedad terminal.",
+    descripcion: "Se entrega <strong>30% de la suma asegurada</strong> en caso de enfermedad terminal del asegurado para afrontar gastos médicos.",
+  }
+];
+---
+
+<Layout
+  title="Seguro de Vida - BIENSEGURO Corp"
+  description="Protege tu futuro y el de tu familia con nuestros seguros de vida. Cobertura completa, respaldo financiero y tranquilidad para tus seres queridos."
+>
+  <HeroServicio
+    titulo="SEGUROS DE VIDA"
+    imagenFondo="/images/servicios/PORTADA-SEGURO-DE-VIDA.webp"
+    imagenFondoFallback="/images/servicios/PORTADA-SEGURO-DE-VIDA.png"
+  />
+
+  <IntroServicio
+    titulo="¡PROTEGE TU FUTURO Y EL DE TU FAMILIA!"
+    subtitulo="¿Por qué es importante contar con un seguro de vida?"
+  />
+
+  <BeneficiosServicio
+    beneficios={beneficios}
+    imagenBeneficios="/images/servicios/FOTO-SEGURO-DE-VIDA.webp"
+    imagenBeneficiosFallback="/images/servicios/FOTO-SEGURO-DE-VIDA.png"
+  />
+
+  <CTAServicio />
+</Layout>
