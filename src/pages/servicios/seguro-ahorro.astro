@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroServicio from '../../components/servicios/HeroServicio.astro';
+import IntroServicio from '../../components/servicios/IntroServicio.astro';
+import BeneficiosServicio from '../../components/servicios/BeneficiosServicio.astro';
+import CTAServicio from '../../components/servicios/CTAServicio.astro';
+
+const beneficios = [
+  {
+    titulo: "Retorno estable e inversión segura",
+    descripcion: "",
+    items: [
+      "Planes con intereses competitivos que maximizan tu inversión.",
+      "Retorno de inversión seguro y estable para alcanzar tus metas."
+    ]
+  },
+  {
+    titulo: "Retiro con tranquilidad.",
+    descripcion: "",
+    items: [
+      "Diseñado para que disfrutes tu jubilación con seguridad financiera.",
+      "Recibe tu dinero en pagos programados o en una suma única."
+    ]
+  },
+  {
+    titulo: "Flexibilidad en aportaciones.",
+    descripcion: "",
+    items: [
+      "Tú decides cuánto y con qué frecuencia ahorrar.",
+      "Opción de incrementar tu ahorro en cualquier momento."
+    ]
+  },
+  {
+    titulo: "Beneficios fiscales.",
+    descripcion: "",
+    items: [
+      "Deducible de impuestos, optimizando tu declaración anual.",
+      "Exento de ISR en ciertos casos de retiro."
+    ]
+  }
+];
+---
+
+<Layout
+  title="Seguro de Ahorro y de Retiro - BIENSEGURO Corp"
+  description="Construye un respaldo financiero para tu futuro con nuestro seguro de ahorro. Beneficios exclusivos, rendimientos atractivos y flexibilidad en aportaciones."
+>
+  <HeroServicio
+    titulo="SEGURO DE AHORRO Y DE RETIRO"
+    imagenFondo="/images/servicios/PORTADA-SEGURO-DE-AHORRO.webp"
+    imagenFondoFallback="/images/servicios/PORTADA-SEGURO-DE-AHORRO.png"
+  />
+
+  <IntroServicio
+    titulo="¡PROTEGE TU FUTURO Y EL DE TU FAMILIA!"
+    subtitulo="Un seguro diseñado para ayudarte a construir un respaldo financiero con beneficios exclusivos y atractivos rendimientos."
+  />
+
+  <BeneficiosServicio
+    beneficios={beneficios}
+    imagenBeneficios="/images/servicios/FOTO-SEGURO-DE-AHORRO.webp"
+    imagenBeneficiosFallback="/images/servicios/FOTO-SEGURO-DE-AHORRO.png"
+  />
+
+  <CTAServicio />
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroServicio from '../../components/servicios/HeroServicio.astro';
+import IntroServicio from '../../components/servicios/IntroServicio.astro';
+import BeneficiosServicio from '../../components/servicios/BeneficiosServicio.astro';
+import CTAServicio from '../../components/servicios/CTAServicio.astro';
+
+const beneficios = [
+  {
+    titulo: "Cobertura para flotillas empresariales",
+    descripcion: "",
+    items: [
+      "Protege todos los vehículos de tu empresa en <strong>una sola póliza</strong>.",
+      "Disponible para taxis, transporte de carga, vehículos utilitarios y más."
+    ]
+  },
+  {
+    titulo: "Montos especiales a partir de 5 autos",
+    descripcion: "Entre más unidades asegures, <strong>mayor es el beneficio</strong> en costos.",
+  },
+  {
+    titulo: "Plan familiar en conjunto",
+    descripcion: "",
+    items: [
+      "Un solo plan para proteger los autos de toda la familia.",
+      "<strong>Mayor comodidad y simplificación de pagos.</strong>"
+    ]
+  },
+  {
+    titulo: "Devolución en nómina de hasta el 35%",
+    descripcion: "",
+    items: [
+      "Recupera un porcentaje de tu inversión.",
+      "Optimiza los costos de tu empresa con <strong>beneficios fiscales</strong>"
+    ]
+  },
+  {
+    titulo: "Seguridad y asistencia en carretera",
+    descripcion: "",
+    items: [
+      "Reparación de daños en caso de accidentes.",
+      "Asistencia vial en caso de emergencias mecánicas.",
+      "Cobertura por robo total o parcial."
+    ]
+  }
+];
+---
+
+<Layout
+  title="Seguro de Flotillas - BIENSEGURO Corp"
+  description="Protege todos tus vehículos en un solo plan. Seguro de flotillas para empresas y familias con montos especiales, devolución en nómina y beneficios fiscales."
+>
+  <HeroServicio
+    titulo="SEGURO DE FLOTILLAS"
+    imagenFondo="/images/servicios/PORTADA-SEGURO-DE-FLOTILLAS.webp"
+    imagenFondoFallback="/images/servicios/PORTADA-SEGURO-DE-FLOTILLAS.png"
+  />
+
+  <IntroServicio
+    titulo="¡PROTEGE TODOS TUS VEHÍCULOS EN UN SOLO PLAN!"
+    subtitulo="Un seguro diseñado para empresas y familias que buscan una solución eficiente y accesible para proteger sus autos."
+  />
+
+  <BeneficiosServicio
+    beneficios={beneficios}
+    imagenBeneficios="/images/servicios/FOTO-SEGURO-DE-FLOTILLAS.webp"
+    imagenBeneficiosFallback="/images/servicios/FOTO-SEGURO-DE-FLOTILLAS.png"
+  />
+
+  <CTAServicio />
+</Layout>

@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroServicio from '../../components/servicios/HeroServicio.astro';
+import IntroServicio from '../../components/servicios/IntroServicio.astro';
+import BeneficiosServicio from '../../components/servicios/BeneficiosServicio.astro';
+import CTAServicio from '../../components/servicios/CTAServicio.astro';
+
+const beneficios = [
+  {
+    titulo: "Seguridad y bienestar para tu equipo.",
+    descripcion: "Un seguro diseñado para empresas que buscan proteger la salud y el futuro de sus colaboradores.",
+  },
+  {
+    titulo: "Cobertura integral.",
+    descripcion: "",
+    items: [
+      "<strong>Seguro de Gastos Médicos Mayores (SGMM):</strong> Incluye análisis médicos a partir de $100,000.",
+      "<strong>Seguro de Vida:</strong> Protección financiera en caso de fallecimiento o invalidez."
+    ]
+  },
+  {
+    titulo: "Flexibilidad en montos asegurados.",
+    descripcion: "",
+    items: [
+      "Cantidad designada por el patrón sin límite.",
+      "<strong>Desde $200,000</strong> en adelante, adaptándose a las necesidades de la empresa y sus empleados."
+    ]
+  },
+  {
+    titulo: "Beneficio fiscal para la empresa.",
+    descripcion: "<strong>Deducible de impuestos.</strong> Reduce la carga fiscal al incluir este beneficio en la estrategia financiera de tu empresa.",
+  }
+];
+---
+
+<Layout
+  title="Seguro Colectivo - BIENSEGURO Corp"
+  description="Protege a tu equipo y fortalece tu empresa con nuestro seguro colectivo. Cobertura integral, flexibilidad en montos asegurados y beneficios fiscales."
+>
+  <HeroServicio
+    titulo="SEGURO COLECTIVO"
+    imagenFondo="/images/servicios/PORTADA-SEGURO-COLECTIVO.webp"
+    imagenFondoFallback="/images/servicios/PORTADA-SEGURO-COLECTIVO.png"
+  />
+
+  <IntroServicio
+    titulo="¡PROTEGE A TU EQUIPO Y FORTALECE TU EMPRESA!"
+    subtitulo="¿Por qué ofrecer un seguro colectivo a tus empleados?"
+  />
+
+  <BeneficiosServicio
+    beneficios={beneficios}
+    imagenBeneficios="/images/servicios/FOTO-SEGURO-COLECTIVO.webp"
+    imagenBeneficiosFallback="/images/servicios/FOTO-SEGURO-COLECTIVO.png"
+  />
+
+  <CTAServicio />
+</Layout>

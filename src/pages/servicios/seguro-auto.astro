@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroServicio from '../../components/servicios/HeroServicio.astro';
+import IntroServicio from '../../components/servicios/IntroServicio.astro';
+import BeneficiosServicio from '../../components/servicios/BeneficiosServicio.astro';
+import CTAServicio from '../../components/servicios/CTAServicio.astro';
+
+const beneficios = [
+  {
+    titulo: "Tipos de coberturas:",
+    descripcion: "",
+    items: [
+      "<strong>SEGURO DE RESPONSABILIDAD CIVIL</strong><br>Cubre los <strong>daños causados a terceros</strong> en caso de accidente. Es <strong>obligatorio</strong> en muchas ciudades y carreteras del país.",
+      "<strong>SEGURO ILIMITADO</strong><br>Incluye <strong>Responsabilidad Civil</strong> y protección en caso de robo total del vehículo."
+    ]
+  },
+  {
+    titulo: "Cobertura Amplia",
+    descripcion: "Protección completa para ti, tu vehículo y terceros.<br><strong>INCLUYE:</strong>",
+    items: [
+      "Gastos de reparación por accidentes.",
+      "Robo total o parcial del auto.",
+      "Daños por desastres naturales (inundaciones, granizo, incendios).",
+      "Asistencia vial (grúa, cambio de llanta, paso de corriente)."
+    ]
+  },
+  {
+    titulo: "Factores que influyen en el precio",
+    descripcion: "",
+    items: [
+      "Modelo y año del vehículo.",
+      "Zona de circulación y riesgos asociados.",
+      "Tipo de cobertura seleccionada."
+    ]
+  }
+];
+---
+
+<Layout
+  title="Seguros de Autos - BIENSEGURO Corp"
+  description="Conduce con tranquilidad y protección. Elige la cobertura que mejor se adapte a tus necesidades: Responsabilidad Civil, Seguro Ilimitado o Cobertura Amplia."
+>
+  <HeroServicio
+    titulo="SEGUROS DE AUTOS"
+    imagenFondo="/images/servicios/PORTADA-SEGURO-DE-AUTO.webp"
+    imagenFondoFallback="/images/servicios/PORTADA-SEGURO-DE-AUTO.png"
+  />
+
+  <IntroServicio
+    titulo="¡CONDUCE CON TRANQUILIDAD Y PROTECCIÓN!"
+    subtitulo="Elige la cobertura que mejor se adapte a tus necesidades y protege tu vehículo ante cualquier imprevisto."
+  />
+
+  <BeneficiosServicio
+    beneficios={beneficios}
+    imagenBeneficios="/images/servicios/FOTO-SEGURO-DE-AUTOS.webp"
+    imagenBeneficiosFallback="/images/servicios/FOTO-SEGURO-DE-AUTOS.png"
+  />
+
+  <CTAServicio />
+</Layout>

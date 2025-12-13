@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroServicio from '../../components/servicios/HeroServicio.astro';
+import IntroServicio from '../../components/servicios/IntroServicio.astro';
+import BeneficiosServicio from '../../components/servicios/BeneficiosServicio.astro';
+import CTAServicio from '../../components/servicios/CTAServicio.astro';
+
+const beneficios = [
+  {
+    titulo: "Apoyo de maternidad de $64,000",
+    descripcion: "(El monto de indemnización <strong>más alto</strong> del mercado).",
+  },
+  {
+    titulo: "Cobertura del recién nacido.",
+    descripcion: "",
+    items: [
+      "Padecimientos congenitos.",
+      "Prematurez y/o complicaciones que se presenten a partir de la fecha de su nacimiento."
+    ]
+  },
+  {
+    titulo: "Complicaciones del embarazo",
+    descripcion: "(se debe contratar este seguro <strong>3 meses</strong> antes de salir embarazada).",
+  },
+  {
+    titulo: "Consultas odontológicas y exámenes",
+    descripcion: "2 limpiezas dentales <strong>gratuitas</strong>, amalgamas, resinas, endodoncia con el <strong>70% de descuento</strong> con dentistas de red.",
+  }
+];
+---
+
+<Layout
+  title="Seguros GMM (Gastos Médicos Mayores) - BIENSEGURO Corp"
+  description="Planifica tu maternidad con nuestro seguro GMM. Apoyo de maternidad de $64,000, cobertura del recién nacido y beneficios dentales exclusivos."
+>
+  <HeroServicio
+    titulo="SEGUROS DE G.M.M (GASTOS MEDICOS MAYORES)"
+    imagenFondo="/images/servicios/PORTADA-SEGURO-GMM.webp"
+    imagenFondoFallback="/images/servicios/PORTADA-SEGURO-GMM.png"
+  />
+
+  <IntroServicio
+    titulo="¡PLANIFICA TU MATERNIDAD!"
+    subtitulo="¿Por qué conviene tener seguro médico antes de embarazarse?"
+  />
+
+  <BeneficiosServicio
+    beneficios={beneficios}
+    imagenBeneficios="/images/servicios/FOTO-SEGURO-GMM.webp"
+    imagenBeneficiosFallback="/images/servicios/FOTO-SEGURO-GMM.png"
+  />
+
+  <CTAServicio />
+</Layout>
