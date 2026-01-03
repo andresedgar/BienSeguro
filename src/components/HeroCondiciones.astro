@@ -1,0 +1,116 @@
+---
+---
+
+<section class="hero-condiciones">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <p class="hero-subtitle">Porque cada detalle importa para proteger tu seguridad.</p>
+        <h1 class="hero-title">CONDICIONES DE<br />LAS PÓLIZAS</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-condiciones {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a4d7d 0%, #2d6fa8 50%, #4a9fd6 100%);
+    overflow: hidden;
+  }
+
+  .hero-condiciones::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/condiciones-polizas/foto-portada.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(26, 77, 125, 0.95) 0%,
+      rgba(45, 111, 168, 0.9) 50%,
+      rgba(74, 159, 214, 0.85) 100%
+    );
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+
+  .hero-text {
+    max-width: 800px;
+    text-align: left;
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.3px;
+  }
+
+  .hero-title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-condiciones {
+      min-height: 400px;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+    }
+  }
+</style>

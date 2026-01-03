@@ -1,25 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroCondiciones from '../components/HeroCondiciones.astro';
+import IntroCondiciones from '../components/IntroCondiciones.astro';
+import CondicionesInfo from '../components/CondicionesInfo.astro';
+import DocumentosDescargables from '../components/DocumentosDescargables.astro';
+import BeneficiosCondiciones from '../components/BeneficiosCondiciones.astro';
 ---
 
-<Layout title="Condiciones de Pólizas" description="Consulta las condiciones de nuestras pólizas de seguros">
-  <section class="page-content">
-    <div class="container">
-      <h1>Condiciones de Pólizas</h1>
-      <!-- Contenido de la página Condiciones de Pólizas -->
-    </div>
-  </section>
+<Layout
+  title="Condiciones de Pólizas - BIENSEGURO Corp"
+  description="Conoce las condiciones de nuestras pólizas de seguros. Protegemos lo que más valoras con seguridad, transparencia y compromiso."
+>
+  <HeroCondiciones />
+  <IntroCondiciones />
+  <CondicionesInfo />
+  <DocumentosDescargables />
+  <BeneficiosCondiciones />
 </Layout>
-
-<style>
-  .page-content {
-    padding: var(--spacing-2xl) 0;
-    flex: 1;
-  }
-
-  h1 {
-    color: var(--color-primary);
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-lg);
-  }
-</style>

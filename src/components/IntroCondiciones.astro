@@ -1,0 +1,122 @@
+---
+---
+
+<section class="intro-condiciones">
+  <div class="container">
+    <div class="intro-content">
+      <div class="intro-text">
+        <h2 class="intro-title">CONDICIONES CLARAS,<br /><span class="highlight">CONFIANZA ASEGURADA.</span></h2>
+        <p class="intro-description">
+          Ponemos a tu disposición las condiciones de nuestras pólizas para que conozcas cómo protegemos lo que más valoras con seguridad y compromiso.
+        </p>
+      </div>
+      <div class="intro-image">
+        <div class="image-wrapper">
+          <img
+            src="/images/condiciones-polizas/foto-condiciones-claras.webp"
+            alt="Condiciones claras"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro-condiciones {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(to bottom, #f8fafb 0%, white 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+
+  .intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .intro-text {
+    padding-right: var(--spacing-xl);
+  }
+
+  .intro-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+  }
+
+  .highlight {
+    color: var(--color-secondary);
+    font-style: italic;
+  }
+
+  .intro-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
+  .intro-image {
+    position: relative;
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 968px) {
+    .intro-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .intro-text {
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .intro-title {
+      font-size: 2rem;
+    }
+
+    .intro-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro-condiciones {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .intro-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,209 @@
+---
+const condiciones = [
+  {
+    id: 'datos',
+    title: 'DATOS Y<br />RESPONSABILIDADES',
+    description: 'Incluye la información del titular de la póliza y de los beneficiarios. Es importante mantener estos datos actualizados para garantizar que la protección sea efectiva.',
+    image: '/images/condiciones-polizas/foto-datos-y-responsabilidades.webp',
+    imageAlt: 'Datos y responsabilidades',
+    bgColor: '#1a4d7d'
+  },
+  {
+    id: 'cobertura',
+    title: 'COBERTURA Y<br />EXCLUSIONES',
+    description: 'La cobertura detalla los riesgos protegidos, mientras que las exclusiones explican qué eventos no están contemplados. Esto ayuda a conocer los límites de la póliza y evitar malentendidos.',
+    image: '/images/condiciones-polizas/foto-coberturas-y-exclusiones.webp',
+    imageAlt: 'Cobertura y exclusiones',
+    bgColor: '#8ac640',
+    reverse: true
+  },
+  {
+    id: 'suma',
+    title: 'SUMA ASEGURADA<br />Y PAGOS',
+    description: 'La suma asegurada es el monto máximo que la aseguradora pagará en caso de siniestro. Las primas son los pagos que se realizan para mantener activa la póliza, ya sea mensual, trimestral o anual.',
+    image: '/images/condiciones-polizas/foto-suma-asegurada-y-pagos.webp',
+    imageAlt: 'Suma asegurada y pagos',
+    bgColor: '#1a4d7d'
+  },
+  {
+    id: 'duracion',
+    title: 'DURACIÓN Y VIGENCIA',
+    description: 'La vigencia es el periodo durante el cual la póliza está activa. Al término de este periodo, puede ser renovada para continuar protegido sin interrupciones.',
+    image: '/images/condiciones-polizas/foto-duracion-y-vigencia.webp',
+    imageAlt: 'Duración y vigencia',
+    bgColor: '#8ac640',
+    reverse: true
+  },
+  {
+    id: 'reclamos',
+    title: 'RECLAMOS Y RESOLUCIÓN<br />DE DISPUTAS',
+    description: 'Si el asegurado necesita presentar un reclamo, se debe consultar los pasos indicados en la póliza. En caso de desacuerdos, contamos con mecanismos para resolverlos de forma rápida y justa.',
+    image: '/images/condiciones-polizas/foto-reclamos-y-resolucion-de-disputas.webp',
+    imageAlt: 'Reclamos y resolución de disputas',
+    bgColor: '#1a4d7d'
+  }
+];
+---
+
+<section class="condiciones-info">
+  <div class="container">
+    {condiciones.map((condicion) => (
+      <div class={`condicion-card ${condicion.reverse ? 'reverse' : ''}`}>
+        <div class="card-image" style={`background: ${condicion.bgColor}`}>
+          <div class="image-wrapper">
+            <img
+              src={condicion.image}
+              alt={condicion.imageAlt}
+              loading="lazy"
+            />
+          </div>
+          <div class="title-overlay">
+            <h3 class="card-title" set:html={condicion.title} />
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="card-description">{condicion.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .condiciones-info {
+    padding: var(--spacing-3xl) 0;
+    background: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+  }
+
+  .condicion-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .condicion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .condicion-card.reverse {
+    direction: rtl;
+  }
+
+  .condicion-card.reverse .card-content {
+    direction: ltr;
+  }
+
+  .card-image {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .title-overlay {
+    position: relative;
+    z-index: 2;
+    padding: var(--spacing-xl);
+    width: 100%;
+  }
+
+  .card-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-content {
+    padding: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    background: white;
+  }
+
+  .card-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 968px) {
+    .condicion-card {
+      grid-template-columns: 1fr;
+    }
+
+    .condicion-card.reverse {
+      direction: ltr;
+    }
+
+    .card-image {
+      min-height: 300px;
+    }
+
+    .card-title {
+      font-size: 1.75rem;
+    }
+
+    .card-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .condiciones-info {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .container {
+      gap: var(--spacing-xl);
+    }
+
+    .card-image {
+      min-height: 250px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+    }
+
+    .title-overlay,
+    .card-content {
+      padding: var(--spacing-lg);
+    }
+  }
+</style>
