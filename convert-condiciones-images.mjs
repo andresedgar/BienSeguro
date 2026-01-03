@@ -7,6 +7,7 @@ const targetDir = 'public/images/condiciones-polizas';
 
 const images = [
   'FOTO-PORTADA.png',
+  'FOTO-PORTADA--CONDICIONES-DE-POLIZAS.png',
   'FOTO-CONDICIONES-CLARAS.png',
   'FOTO-DATOS-Y-RESPONSABILIDADES.png',
   'FOTO-COBERTURAS-Y-EXCLUSIONES.png',
